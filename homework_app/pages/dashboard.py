@@ -67,7 +67,7 @@ html,body,[data-testid="stAppViewContainer"]{{
 [data-testid="stDecoration"]{{display:none!important;}}
 [data-testid="stStatusWidget"]{{display:none!important;}}
 #MainMenu,footer,header{{visibility:hidden!important;}}
-
+[data-testid="stSidebarNav"]{{display:none!important;}}
 /* TOPBAR */
 .topbar{{
     display:flex;align-items:center;justify-content:space-between;
@@ -114,19 +114,25 @@ section[data-testid="stSidebar"]{{
 }}
 
 [data-testid="stSidebarNav"]{{
-    display:block!important;
-    visibility:visible!important;
+    display:none!important;
 }}
 
 [data-testid="collapsedControl"]{{
-    display:block!important;
-    visibility:visible!important;
+    display:none!important;
 }}
 
 button[kind="header"]{{
-    display:block!important;
-    visibility:visible!important;
+    display:none!important;
 }}
+
+[data-testid="stSidebarHeader"]{{
+    display:none!important;
+}}
+
+[data-testid="stSidebarCollapseButton"]{{
+    display:none!important;
+}}
+
 
 [data-testid="stSidebar"] .stButton>button{{
     width:100%!important;
@@ -470,7 +476,7 @@ NAV = [
     ("🍅", "Pomodoro",          "pomodoro"),
     ("🌍", "General Knowledge", "geo"),
 ]
-st.sidebar.empty()
+
 with st.sidebar:
     st.markdown("<div style='height:4px'></div>", unsafe_allow_html=True)
     for icon, label, key in NAV:
